@@ -27,6 +27,7 @@ services:
       - type: bind
         source: ./librechat.yaml
         target: /app/librechat.yaml
+      - /var/docker-data/librechat-data/app-uploads:/app/uploads
       - /var/docker-data/librechat-data/app-data:/app/data
       - /var/docker-data/librechat-data/images:/app/client/public/images
       - /var/docker-data/librechat-data/logs:/app/api/logs
