@@ -129,6 +129,7 @@ helm/**/.values.yaml
 # SAML Idp cert
 *.cert
 
+<<<<<<< HEAD
 # AI Assistants
 /.claude/
 /.cursor/
@@ -137,7 +138,9 @@ helm/**/.values.yaml
 /.openai/
 /.tabnine/
 /.codeium
+<<<<<<< HEAD
 *.local.md
+<<<<<<< HEAD
 
 
 # Removed Windows wrapper files per user request
@@ -169,3 +172,11 @@ coordination/orchestration/*
 claude-flow
 # Removed Windows wrapper files per user request
 hive-mind-prompt-*.txt
+=======
+=======
+=======
+# custom
+.env
+>>>>>>> 51afdecec ([] Local setup config)
+>>>>>>> b09864667 ([] Local setup config)
+>>>>>>> 92ed33f96 ([] Local setup config)

@@ -1,0 +1,48 @@
+# For more information, see the Configuration Guide:
+# https://docs.librechat.ai/install/configuration/custom_config.html
+
+# Configuration version (required)
+version: 1.2.1
+
+# Cache settings: Set to true to enable caching
+cache: true
+
+endpoints:
+  custom:
+    - name: "Ollama"
+      apiKey: "ollama"
+      # use 'host.docker.internal' instead of localhost if running LibreChat in a docker container
+      baseURL: "http://ollama:11434/v1/chat/completions"
+      models:
+        default: [
+          "llama",
+          "mistral",
+          "codellama",
+          "dolphin-mixtral",
+          "mistral-openorca"
+        ]
+        # fetching list of models is supported but the `name` field must start
+        # with `ollama` (case-insensitive), as it does in this example.
+        fetch: true
+      titleConvo: true
+      titleModel: "current_model"
+      summarize: false
+      summaryModel: "current_model"
+      forcePrompt: false
+      modelDisplayLabel: "Ollama"
+
+mcpServers:
+# Local Tryout MCP
+#  everything:
+#    type: "sse"
+#    # type: sse # type can optionally be omitted
+#    url: http://172.17.0.1:8080/mcp/sse
+#   timeout: 60000  # 1 minute timeout for this server, this is the default timeout for MCP servers.
+  # Must have MCP servers
+  # https://www.reddit.com/r/ClaudeAI/comments/1k0f3vs/musthave_mcp_servers_for_coding_and_beyond/
+  #
+  # https://github.com/nickclyde/duckduckgo-mcp-server
+  "ddg-search": {
+    "command": "uvx",
+    "args": [ "duckduckgo-mcp-server" ]
+  }
